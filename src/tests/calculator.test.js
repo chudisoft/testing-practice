@@ -38,13 +38,18 @@ describe('Divide 2 numbers', () => {
   test('4 / 2 to equal 2', () => {
     expect(cal.divide(4, 2)).toBe(2);
   });
+  test('1 / 0 to throw error', () => {
+    // console.log(1 / 0);
+    expect(() => cal.divide(1, 0)).toThrow('Cannot divide by zero');
+  });
   // test('1 / 0 to throw error', () => {
   //   console.log(1 / 0);
-  //   expect(() => cal.divide(1, 0)).toHaveReturnedWith(Infinity);
+  //   expect(() => cal.divide(1, 0)).toBe(() => {});
+  //   // expect(() => cal.divide(1, 0)).toBe(typeof Infinity);
   // });
-  // test('0 / 1 to throw error', () => {
-  //   expect(() => cal.divide(0, 1)).toThrow(Error);
-  // });
+  test('0 / 1 to throw error', () => {
+    expect(cal.divide(0, 1)).toBe(0);
+  });
   test('1 / 1 to equal 2', () => {
     expect(cal.divide(1, 1)).toBe(1);
   });

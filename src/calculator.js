@@ -6,6 +6,8 @@ class calculator {
         return x - y;
     } 
     divide (x, y) {
+        if (x === 0) return 0;
+        if (y === 0) throw new Error('Cannot divide by zero');
         return x / y;
     } 
     multiply (x, y) {
